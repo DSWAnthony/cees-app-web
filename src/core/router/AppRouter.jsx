@@ -1,9 +1,6 @@
-// src/core/routes/AppRouter.jsx
-import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import StudentLayout from '../layouts/student/pages/StudentLayout';
-import ProfilePage from '../../modules/student/profile/pages/ejemplo/ProfilePage';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import StudentLayout from '../layouts/student/pages/StudentLayout'
+import ProfilePage from '../../modules/student/profile/pages/ProfilePage.jsx'
 import PendingTasksPage from '../../modules/student/pending-tasks/pages/PendingTasksPage';
 import PendingTaskDetailPage from '../../modules/student/pending-tasks/pages/PendingTaskDetailPage';
 
