@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import StudentLayout from '../layouts/student/pages/StudentLayout'
-import ProfilePage from '../../modules/student/profile/pages/ejemplo/ProfilePage'
+import ProfilePage from '../../modules/student/profile/pages/ProfilePage.jsx'
 
 const AppRouter = () => {
   return (
