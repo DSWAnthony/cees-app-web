@@ -1,45 +1,68 @@
-// StudentSidebar.jsx
 import React from 'react';
 import { Layout } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../../../../assets/logo-cees.svg';
+import {
+  LuGraduationCap,
+  LuListChecks,
+  LuCalendarDays,
+  LuContactRound,
+  LuNotebookPen,
+  LuLogOut,
+} from "react-icons/lu";
 
 const { Sider } = Layout;
 
 const StudentSidebar = () => {
+  const location = useLocation();
+
+  const menuItems = [
+    { path: "/courses", label: "Cursos", icon: <LuGraduationCap /> },
+    { path: "/pending-tasks", label: "Tareas Pendientes", icon: <LuNotebookPen /> },
+    { path: "/califications", label: "Calificaciones", icon: <LuListChecks /> },
+    { path: "/calendar", label: "Calendario", icon: <LuCalendarDays /> },
+    { path: "/profile", label: "Perfil", icon: <LuContactRound /> },
+  ];
+
   return (
     <Sider
-        width={220}
-        className="bg-white text-gray-800 shadow-md"
-        style={{ position: 'fixed', height: '100vh', left: 0, top: 0, zIndex: 1000 }}
-        breakpoint="lg"
-        trigger={null}
-        collapsible
-        theme="light"
+      width={220}
+      className="bg-white text-gray-800 shadow-md"
+      style={{ position: 'fixed', height: '100vh', left: 0, top: 0, zIndex: 1000 }}
+      breakpoint="lg"
+      trigger={null}
+      collapsible
+      theme="light"
     >
-        <div className="flex items-center justify-center h-50 bg-blue-500 text-white text-lg font-bold">
-            Student 
-        </div>
-        <nav className="mt-4">
-            <ul className="space-y-2">
-              <li>
-                <Link to="/home" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
-              </li>
-              <li>
-                <Link to="/courses" className="block px-4 py-2 hover:bg-gray-200">Courses</Link>
-              </li>
-              <li>
-                <Link to="/pending-tasks" className="block px-4 py-2 hover:bg-gray-200">Pending Tasks</Link>
-              </li>
-              <li>
-                <Link to="/profile" className="block px-4 py-2 hover:bg-gray-200">Profile</Link>
-              </li>
-              <li>
-                <Link to="/settings" className="block px-4 py-2 hover:bg-gray-200">Settings</Link>
-              </li>
-            </ul>
-        </nav>
+      <div className="flex items-center justify-center h-50 text-lg p-10">
+        <img src={logo} alt="Logo CEES" />
+      </div>
+      <nav className="m-4">
+        <ul className="space-y-2">
+          {menuItems.map(({ path, label, icon }) => (
+            <li key={path} className={`rounded-lg ${location.pathname === path ? "bg-gray-200 font-semibold" : "hover:bg-gray-100"}`}>
+              <Link
+                to={path}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg transition-colors duration-200"
+              >
+                <span className="text-gray-500  flex items-center gap-2">
+                  {icon} {label}
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <ul className="mt-4 border-t pt-2">
+          <li className="hover:bg-gray-100 rounded-lg">
+            <Link to="/settings" className="flex items-center gap-2 px-4 py-2 text-gray-500 hover:text-gray-700">
+              <LuLogOut /> Cerrar Sesión
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </Sider>
-  )
-}
+  );
+};
 
 export default StudentSidebar;
