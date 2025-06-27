@@ -1,4 +1,5 @@
-import React from 'react'
+// StudentSidebar.jsx
+import React from 'react';
 import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -20,14 +21,25 @@ const StudentSidebar = () => {
         </div>
         <nav className="mt-4">
             <ul className="space-y-2">
-            <li><Link to="/home" className="block px-4 py-2 hover:bg-gray-200">Home</Link></li>
-            <li><Link to="/courses" className="block px-4 py-2 hover:bg-gray-200">Courses</Link></li>
-            <li><Link to="/profile" className="block px-4 py-2 hover:bg-gray-200">Profile</Link></li>
-            <li><Link to="/settings" className="block px-4 py-2 hover:bg-gray-200">Settings</Link></li>
+              <li>
+                <Link to="/home" className="block px-4 py-2 hover:bg-gray-200">Home</Link>
+              </li>
+              <li>
+                <Link to="/courses" className="block px-4 py-2 hover:bg-gray-200">Courses</Link>
+              </li>
+              <li>
+                <Link to="/pending-tasks" className="block px-4 py-2 hover:bg-gray-200">Pending Tasks</Link>
+              </li>
+              <li>
+                <Link to="/profile" className="block px-4 py-2 hover:bg-gray-200">Profile</Link>
+              </li>
+              <li>
+                <Link to="/settings" className="block px-4 py-2 hover:bg-gray-200">Settings</Link>
+              </li>
             </ul>
         </nav>
     </Sider>
   )
 }
 
-export default StudentSidebar
+export default StudentSidebar;
