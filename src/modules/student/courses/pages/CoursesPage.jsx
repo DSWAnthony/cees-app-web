@@ -33,7 +33,7 @@ const cursos = [
   },
 ];
 
-const CoursesPage = () => {
+function CoursesPage() {
   return (
     <div style={{
       minHeight: '100vh',
