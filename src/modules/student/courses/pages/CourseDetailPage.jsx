@@ -1,5 +1,5 @@
 import  { useState } from 'react'
-import ContentTab from '../components/ContentTab';
+import ContentTab from '../components/content-tab/ContentTab.jsx';
 import CalificationTab from '../components/CalificationTab';
 import ForumTab from '../components/ForumTab';
 
