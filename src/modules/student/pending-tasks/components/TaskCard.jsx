@@ -3,12 +3,17 @@ import React from 'react';
 import { FileText } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+
 const TaskCard = ({ task }) => {
   return (
+    
     <div className="bg-white rounded-lg shadow p-6 flex justify-between items-start">
       <div className="flex items-start space-x-4">
-        <FileText className="w-8 h-8 text-blue-600" />
+        <FileText className="w-8 h-8 text-blue-600" /
+        >
+          
         <div>
+          
           <h2 className="text-lg font-semibold">{task.title}</h2>
           <p className="text-sm">
             <span className="font-semibold">Curso:</span> {task.course}
