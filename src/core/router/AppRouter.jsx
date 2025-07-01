@@ -7,6 +7,7 @@ import CoursesPage from '../../modules/student/courses/pages/CoursesPage.jsx';
 import CourseDetailPage from '../../modules/student/courses/pages/CourseDetailPage.jsx';
 import ForumDiscussionPage from '../../modules/student/courses/pages/ForumDiscussionPage.jsx';
 import DrawerQuiz from '../../modules/student/courses/components/drawer/DrawerQuiz.jsx';
+import CalendarPage from '../../modules/student/calendar/pages/CalendarPage.jsx';
 
 const AppRouter = () => {
   return (
@@ -20,7 +21,7 @@ const AppRouter = () => {
           <Route path="pending-tasks/:id" element={<PendingTaskDetailPage />} />
           <Route path="califications" element={<div>Califications Page</div>} />
           <Route path="profile" element={<ProfilePage />} />
-          <Route path="calendar" element={<div>Calendar Page</div>} />
+          <Route path="calendar" element={ <CalendarPage/> } />
           <Route path="courses/detail/forum" element={ <ForumDiscussionPage/>} />
           <Route path="quiz" element={<DrawerQuiz></DrawerQuiz>} />
 
