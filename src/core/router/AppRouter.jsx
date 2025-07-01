@@ -5,6 +5,7 @@ import PendingTasksPage from '../../modules/student/pending-tasks/pages/PendingT
 import PendingTaskDetailPage from '../../modules/student/pending-tasks/pages/PendingTaskDetailPage';
 import CoursesPage from '../../modules/student/courses/pages/CoursesPage.jsx';
 import CourseDetailPage from '../../modules/student/courses/pages/CourseDetailPage.jsx';
+import ForumDiscussionPage from '../../modules/student/courses/pages/ForumDiscussionPage.jsx';
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
           <Route path="califications" element={<div>Califications Page</div>} />
           <Route path="profile" element={<ProfilePage />} />
           <Route path="calendar" element={<div>Calendar Page</div>} />
+          <Route path="courses/detail/forum" element={ <ForumDiscussionPage/>} />
         </Route>
       </Routes>
     </BrowserRouter>
