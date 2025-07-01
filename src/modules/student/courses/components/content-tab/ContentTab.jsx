@@ -3,6 +3,7 @@ import { CourseProgress } from "./CourseProgress.jsx";
 import { CourseActions } from "./CourseActions.jsx";
 import { ModuleCard } from "./ModuleCard.jsx";
 import { useCourseData } from "../../hooks/useCourseData.js";
+import Drawer from '../drawer/Drawer.jsx';
 
 const ContentTab = () => {
   const { modules, courseProgress } = useCourseData();
@@ -24,6 +25,7 @@ const ContentTab = () => {
               ))}
             </div>
           </div>
+          <Drawer />
 
           {/* Recordings and Progress */}
           <div className="lg:w-[280px] flex-shrink-0">
