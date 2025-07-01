@@ -36,7 +36,7 @@ const PendingTaskDetailPage = () => {
   return (
     <div className="bg-gray-100 min-h-screen px-4 py-6 md:px-8 space-y-6">
 
-      {/* Título y curso */}
+      {/* titulo y curso */}
       <div className="max-w-4xl mx-auto space-y-1">
         <h1 className="text-2xl md:text-3xl font-bold text-blue-700">{task.title}</h1>
         <p className="text-gray-500 text-sm md:text-base">{task.course}</p>
@@ -49,19 +49,19 @@ const PendingTaskDetailPage = () => {
         </button>
       </div>
 
-      {/* Caja blanca separada - Instrucciones */}
+      {/* modal para instrucciones*/}
       <section className="bg-white border border-gray-200 shadow-md rounded-lg p-6 max-w-4xl mx-auto">
         <h2 className="text-lg font-semibold mb-2 text-gray-800">Instrucciones</h2>
         <p className="text-gray-700 text-sm leading-relaxed">{task.description}</p>
       </section>
 
-      {/* Caja blanca unificada: entrega + archivo + botones */}
+      {/* modal para entrega y ...*/}
       <form
         onSubmit={handleSubmit}
         className="bg-white border border-gray-200 shadow-md rounded-lg p-6 space-y-6 max-w-4xl mx-auto"
       >
 
-        {/* Entrega */}
+        {/* para entregar */}
         <div>
           <h2 className="text-lg font-semibold mb-2 text-gray-800">Entrega</h2>
           <textarea
@@ -72,7 +72,7 @@ const PendingTaskDetailPage = () => {
           />
         </div>
 
-        {/* Subir archivos */}
+        {/* para subir archivos */}
         <div>
           <h2 className="text-lg font-semibold mb-2 text-gray-800">Subir archivos</h2>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3">
@@ -93,12 +93,12 @@ const PendingTaskDetailPage = () => {
           </div>
         </div>
 
-        {/* Mensaje de error */}
+        {/* para mensaje en caso de error */}
         {error && (
           <p className="text-sm text-red-600">{error}</p>
         )}
 
-        {/* Botones */}
+        {/* butonnes */}
         <div className="flex flex-col sm:flex-row justify-end gap-3 pt-4">
           <button
             type="button"
