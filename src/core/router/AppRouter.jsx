@@ -8,6 +8,8 @@ import CourseDetailPage from '../../modules/student/courses/pages/CourseDetailPa
 import ForumDiscussionPage from '../../modules/student/courses/pages/ForumDiscussionPage.jsx';
 import DrawerQuiz from '../../modules/student/courses/components/drawer/DrawerQuiz.jsx';
 import CalendarPage from '../../modules/student/calendar/pages/CalendarPage.jsx';
+import CoursesPage from '../../modules/student/courses/pages/CoursesPage';
+import CourseRecordingsPage from '../../modules/student/courses/pages/CourseRecordingsPage';
 
 const AppRouter = () => {
   return (
