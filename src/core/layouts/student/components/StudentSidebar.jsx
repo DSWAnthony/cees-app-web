@@ -64,5 +64,4 @@ const StudentSidebar = () => {
     </Sider>
   );
 };
-
 export default StudentSidebar;
