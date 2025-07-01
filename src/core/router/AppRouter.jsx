@@ -8,7 +8,6 @@ import CourseDetailPage from '../../modules/student/courses/pages/CourseDetailPa
 import ForumDiscussionPage from '../../modules/student/courses/pages/ForumDiscussionPage.jsx';
 import DrawerQuiz from '../../modules/student/courses/components/drawer/DrawerQuiz.jsx';
 import CalendarPage from '../../modules/student/calendar/pages/CalendarPage.jsx';
-import CoursesPage from '../../modules/student/courses/pages/CoursesPage';
 import CourseRecordingsPage from '../../modules/student/courses/pages/CourseRecordingsPage';
 
 const AppRouter = () => {
@@ -26,7 +25,7 @@ const AppRouter = () => {
           <Route path="calendar" element={ <CalendarPage/> } />
           <Route path="courses/detail/forum" element={ <ForumDiscussionPage/>} />
           <Route path="quiz" element={<DrawerQuiz></DrawerQuiz>} />
-
+          <Route path="courses/detail/recordings/:id" element={<CourseRecordingsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

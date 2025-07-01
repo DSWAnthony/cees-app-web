@@ -1,25 +1,21 @@
 
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import useCourses from '../hooks/useCourses';
 import useRecordings from '../hooks/useRecordings';
 import { ArrowLeft, Play } from 'lucide-react';
 
 const CourseRecordingsPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const courses = useCourses();
+
   const recordings = useRecordings(id);
 
-  const course = courses.find((c) => c.id === parseInt(id));
-
-  if (!course) return <div>Curso no encontrado</div>;
 
   return (
     <div className="px-10 py-6 bg-gray-50 min-h-screen">
     
       <h1 className="text-3xl font-extrabold text-[#0070C0] mb-1">Ver Grabaciones</h1>
-      <p className="text-gray-600 font-medium mb-6">{course.title}</p>
+      <p className="text-gray-600 font-medium mb-6">Ejemplo</p>
 
       <button
         onClick={() => navigate(-1)}
