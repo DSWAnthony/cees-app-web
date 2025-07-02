@@ -143,7 +143,7 @@ export function useCourseData() {
         setTimeout(() => {
             setModules(mockData);
             setLoading(false);
-        }, 1000);
+        });
     }, []);
 
     const courseProgress = {
