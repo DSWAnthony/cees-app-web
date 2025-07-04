@@ -9,6 +9,9 @@ import ForumDiscussionPage from '../../modules/student/courses/pages/ForumDiscus
 import DrawerQuiz from '../../modules/student/courses/components/drawer/DrawerQuiz.jsx';
 import CalendarPage from '../../modules/student/calendar/pages/CalendarPage.jsx';
 import CourseRecordingsPage from '../../modules/student/courses/pages/CourseRecordingsPage';
+import FilePage from '../../modules/student/courses/pages/FilePage.jsx';
+import TaskDetailPage from '../../modules/student/courses/pages/TaskDetailPage.jsx';
+import AdminLayout from '../layouts/admin/pages/AdminLayout.jsx';
 
 const AppRouter = () => {
   return (
@@ -25,8 +28,23 @@ const AppRouter = () => {
           <Route path="calendar" element={ <CalendarPage/> } />
           <Route path="courses/detail/forum" element={ <ForumDiscussionPage/>} />
           <Route path="quiz" element={<DrawerQuiz></DrawerQuiz>} />
+
+          <Route path="courses/detail/file" element={<FilePage />} />
+          <Route path="courses/detail/task" element={<TaskDetailPage />} />
           <Route path="courses/detail/recordings/:id" element={<CourseRecordingsPage />} />
         </Route>
+
+        <Route path="/admin" element={ <AdminLayout/> } >
+
+          <Route index path="home" element={<div>Admin Home Page</div>} />
+          <Route path="courses" element={<div>Admin Courses Page</div>} />
+          <Route path="teachers" element={<div>Admin Teachers Page</div>} />
+          <Route path="students" element={<div>Admin Students Page</div>}/>
+          <Route path="assigments" element={<div>Admin Assigments Page</div>} />
+          <Route path="profile" element={<div>Admin Profile Page</div>} />
+          
+        </Route>
+        
       </Routes>
     </BrowserRouter>
   );

@@ -1,7 +1,6 @@
 import React from 'react';
 import DrawerQuiz from './DrawerQuiz';
 import DrawerTask from './DrawerTask';
-import FullscreenDrawer from './DrawerScreen';
 import { useDrawerStore } from '../../store/useDrawerStore';
 const Drawer = () => {
   const type = useDrawerStore((state) => state.type);
@@ -15,8 +14,6 @@ const Drawer = () => {
       return <DrawerQuiz open onClose={closeDrawer} item={data} />;
     case 'task':
       return <DrawerTask open onClose={closeDrawer} item={data} />;
-    case 'presentation':
-      return <FullscreenDrawer open onClose={closeDrawer} content={data} />;
     default:
       return null;
   }
