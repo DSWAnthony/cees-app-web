@@ -1,12 +1,22 @@
 import React from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
+import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 
 export default function DetalleCursos() {
-  // Lista de PDFs (pueden ser diferentes si lo deseas)
+  // Lista de documentos
+  const docs = [
+    {
+      uri: 'src/files/Programacion-Curricular-2024-Primaria.pdf',
+      fileType: 'pdf',
+      fileName: 'Programacion-Curricular-2024-Primaria'
+    }
+  ];
+
+  // Lista de PDFs
   const pdfUrl = 'https://materialeseducativos.org/wp-content/uploads/Logica-Proposicional-II-Para-Quinto-Grado-de-Secundaria.pdf';
   const thumbnailUrl = 'https://play-lh.googleusercontent.com/BkRfMfIRPR9hUnmIYGDgHHKjow-g18-ouP6B2ko__VnyUHSi1spcc78UtZ4sVUtBH4g';
 
-  // Crear una lista de 6 elementos
+  // Crear una lista de 6 elementos con PDFs
   const pdfs = Array(6).fill({ url: pdfUrl, thumb: thumbnailUrl });
 
   return (
@@ -27,8 +37,7 @@ export default function DetalleCursos() {
         <section className="mb-6">
           <h2 className="text-md font-semibold text-gray-700 mb-2">Logro de aprendizaje</h2>
           <p className="text-sm text-gray-700 leading-relaxed">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Lorem ipsum dolor sit amet, 
-          consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
         </section>
 
@@ -36,9 +45,22 @@ export default function DetalleCursos() {
         <section>
           <h2 className="text-md font-semibold text-gray-900 mb-2">Material de la clase</h2>
           <p className="text-sm text-gray-700 leading-relaxed mb-7">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat. Lorem ipsum dolor sit amet,
-           consectetur adipiscing elit, sed do eiusmod  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea  commodo consequat.  
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
+
+          {/* Aquí colocamos el DocViewer para mostrar el documento */}
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">Visualizador de Documento</h3>
+
+            {/* Contenedor con scroll */}
+            <div style={{ height: 600, maxWidth: '100%', overflow: 'auto', border: '1px solid #ccc', borderRadius: '8px' }}>
+              <DocViewer
+                documents={docs}
+                pluginRenderers={DocViewerRenderers}
+                style={{ height: '100%', width: '100%' }}
+              />
+            </div>
+          </div>
 
           {/* Grid de miniaturas */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
@@ -50,11 +72,7 @@ export default function DetalleCursos() {
                 rel="noopener noreferrer"
                 className="flex justify-center"
               >
-                <img
-                  src={pdf.thumb}
-                  alt={`PDF ${index + 1}`}
-                  className="h-[150px] object-contain border-2 border-gray-300 shadow-sm rounded hover:scale-105 transition-transform duration-200"
-                />
+               
               </a>
             ))}
           </div>
@@ -62,4 +80,4 @@ export default function DetalleCursos() {
       </div>
     </div>
   );
-}
+};
