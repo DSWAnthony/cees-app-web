@@ -38,7 +38,7 @@ function CoursesPage() {
     <div style={{
       minHeight: '100vh',
       backgroundColor: 'white',
-      padding: '40px 20px'
+      padding: '40px 20px',
     }}>
       <h1 style={{
         marginBottom: '30px',

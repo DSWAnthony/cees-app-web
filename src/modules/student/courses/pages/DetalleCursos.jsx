@@ -54,6 +54,7 @@ export default function DetalleCursos() {
 
             {/* Contenedor con scroll */}
             <div style={{ height: 600, maxWidth: '100%', overflow: 'auto', border: '1px solid #ccc', borderRadius: '8px' }}>
+
               <DocViewer
                 documents={docs}
                 pluginRenderers={DocViewerRenderers}

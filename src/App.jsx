@@ -2,7 +2,7 @@ import { useState } from 'react'
 import CoursesPage from './modules/student/courses/pages/CoursesPage'
 import StudentModulo from './modules/student/courses/pages/StudentModulo'
 import DetalleCursos from './modules/student/courses/pages/DetalleCursos' // Asegúrate de que esta ruta sea correcta
-
+import CursosAdministrador from './modules/student/courses/pages/CursosAdministrador'
 
 function App() {
   const [currentView, setCurrentView] = useState('courses')
@@ -70,6 +70,21 @@ function App() {
         >
           Detalle Cursos
         </button>
+        <button
+          onClick={() => setCurrentView('CursosAdmin')}
+          style={{
+            padding: '10px 20px',
+            backgroundColor: currentView === 'CursosAdmin' ? '#4CAF50' : '#e0e0e0',
+            color: currentView === 'CursosAdmin' ? 'white' : '#333',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+            transition: 'all 0.3s ease',
+            fontWeight: '500',
+          }}
+        >
+          Cursos Administrador
+        </button>
       </div>
       
 
@@ -77,6 +92,7 @@ function App() {
       {currentView === 'courses' && <CoursesPage />}
       {currentView === 'student' && <StudentModulo />}
       {currentView === 'detalle' && <DetalleCursos />}
+       {currentView === 'CursosAdmin' && <CursosAdministrador />}
 
     </div>
   )
