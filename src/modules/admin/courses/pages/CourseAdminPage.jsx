@@ -38,11 +38,10 @@ export default function CourseAdminPage() {
   return (
     <div className="p-8">
       {/* Título */}
-
-<h1 className="text-3xl font-bold mb-2 text-green-600">Cursos</h1>
+      <h1 className="text-3xl font-bold mb-4 text-green-600">Cursos</h1>
 
       {/* Buscador y botón */}
-      <div className="flex justify-between items-center mb-6 gap-4 flex-wrap">
+      <div className="flex justify-between items-center mb-6 flex-wrap gap-6">
         <div className="flex items-center bg-white border rounded px-3 py-2 w-64 shadow-sm">
           <FaSearch className="text-gray-400 mr-2 text-sm" />
           <input
@@ -58,9 +57,12 @@ export default function CourseAdminPage() {
       </div>
 
       {/* Tarjetas */}
-      <div className="flex justify-center">
+      <div className="flex flex-wrap justify-center gap-17">
         {cursos.map((curso) => (
-          <div className="bg-white rounded-lg shadow-lg hover:shadow-xl w-[350px] h-[500px] flex flex-col">
+          <div
+            key={curso.id}
+            className="bg-white rounded-lg shadow-lg hover:shadow-xl w-[350px] h-[500px] flex flex-col"
+          >
             {/* Imagen */}
             <img
               src={curso.imagen}
@@ -68,46 +70,41 @@ export default function CourseAdminPage() {
               className="w-full h-40 object-cover rounded-t-lg"
             />
             {/* Contenido */}
-            <div className="p-4 max-w-xl mx-auto bg-white rounded shadow flex flex-col flex-1 justify-between">
-  {/* Título y descripción */}
-            <div>
-            <h1 className="text-0xl font-bold mb-4">Estrategias Didácticas</h1>
-            <p className="mb-2">
-                Curso completo sobre metodologías y estrategias didácticas modernas para la educación superior.
-            </p>
-            {/* "Profesor:" alineado a la derecha */}
-            <span className="font-semibold">Profesor:</span> 
-            {/* Nombre pegado a la izquierda del espacio restante */}
-            <span className="text-left w-full ml-41">José Valdez</span>
-
-            {/* "Profesor:" alineado a la derecha */}
-            <span className="font-semibold">Precio:</span> 
-            {/* Nombre pegado a la izquierda del espacio restante */}
-            <span className="text-left w-full ml-54">S/ 500</span>
-
-            {/* "Profesor:" alineado a la derecha */}
-            <span className="font-semibold">Duración:</span> 
-            {/* Nombre pegado a la izquierda del espacio restante */}
-            <span className="text-left w-full ml-51">120h</span>
-
-            {/* "Profesor:" alineado a la derecha */}
-            <span className="font-semibold">Certificado:</span> 
-            {/* Nombre pegado a la izquierda del espacio restante */}
-            <span className="text-left w-full ml-52"> Sí</span>
-           
-        </div>
+            <div className="p-4 flex flex-col flex-1 justify-between">
+              {/* Título y descripción */}
+              <div>
+                <h2 className="text-xl font-bold mb-2">{curso.titulo}</h2>
+                <p className="mb-2 text-sm text-gray-700">{curso.descripcion}</p>
+                {/* Información adicional */}
+                <div className="space-y-1">
+                  <div className="flex justify-between">
+                    <span className="font-semibold">Profesor:</span>
+                    <span className="ml-2">{curso.profesor}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold">Precio:</span>
+                    <span className="ml-2">{curso.precio}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold">Duración:</span>
+                    <span className="ml-2">{curso.duracion}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="font-semibold">Certificado:</span>
+                    <span className="ml-2">{curso.certificado}</span>
+                  </div>
+                </div>
+              </div>
               {/* Botones */}
-              <div className="flex justify-between items-center mt-2">
-              <button className="flex items-center bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-3 w-24 h-10">
-                <FaEye className="mr-2" /> Ver
+              <div className="flex justify-between items-center mt-4">
+                <button className="flex items-center bg-blue-600 hover:bg-blue-700 text-white rounded px-4 py-2 w-24 h-10 text-sm">
+                  <FaEye className="mr-2" /> Ver
                 </button>
-
-                <button className="flex items-center bg-green-600 hover:bg-green-700 text-white rounded px-4 py-3 w-24 h-10">
-                <FaEdit className="mr-2" /> Editar
+                <button className="flex items-center bg-green-600 hover:bg-green-700 text-white rounded px-4 py-2 w-24 h-10 text-sm">
+                  <FaEdit className="mr-2" /> Editar
                 </button>
-
-                <button className="flex items-center justify-center bg-[#4b6c63] hover:bg-[#3b5a52] rounded p-3 w-20 h-10">
-                <FaEllipsisV className="text-white text-xl" />
+                <button className="flex items-center justify-center bg-[#4b6c63] hover:bg-[#3b5a52] rounded p-2 w-10 h-10">
+                  <FaEllipsisV className="text-white text-xl" />
                 </button>
               </div>
             </div>
