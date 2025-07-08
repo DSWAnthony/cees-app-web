@@ -1,4 +1,4 @@
-"use client"
+
 
 import { Clock, RotateCcw, CheckCircle } from "lucide-react"
 

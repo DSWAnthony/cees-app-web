@@ -12,6 +12,8 @@ import CourseRecordingsPage from '../../modules/student/courses/pages/CourseReco
 import FilePage from '../../modules/student/courses/pages/FilePage.jsx';
 import TaskDetailPage from '../../modules/student/courses/pages/TaskDetailPage.jsx';
 import AdminLayout from '../layouts/admin/pages/AdminLayout.jsx';
+import QuizPage from '../../modules/student/courses/pages/QuizPage.jsx';
+import CourseAdminPage from '../../modules/admin/courses/pages/CourseAdminPage.jsx';
 
 const AppRouter = () => {
   return (
@@ -27,7 +29,7 @@ const AppRouter = () => {
           <Route path="profile" element={<ProfilePage />} />
           <Route path="calendar" element={ <CalendarPage/> } />
           <Route path="courses/detail/forum" element={ <ForumDiscussionPage/>} />
-          <Route path="quiz" element={<DrawerQuiz></DrawerQuiz>} />
+          <Route path="quiz" element={<QuizPage/>} />
 
           <Route path="courses/detail/file" element={<FilePage />} />
           <Route path="courses/detail/task" element={<TaskDetailPage />} />
@@ -37,7 +39,7 @@ const AppRouter = () => {
         <Route path="/admin" element={ <AdminLayout/> } >
 
           <Route index path="home" element={<div>Admin Home Page</div>} />
-          <Route path="courses" element={<div>Admin Courses Page</div>} />
+          <Route path="courses" element={<CourseAdminPage/>} />
           <Route path="teachers" element={<div>Admin Teachers Page</div>} />
           <Route path="students" element={<div>Admin Students Page</div>}/>
           <Route path="assigments" element={<div>Admin Assigments Page</div>} />
