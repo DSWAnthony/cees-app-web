@@ -7,6 +7,8 @@ import { createPortal } from 'react-dom';
 const DrawerScreen = ({ open, onClose, content }) => {
   if (!open || typeof document === 'undefined') return null;
 
+  console.log("DrawerScreen content:", content);
+  
   return createPortal(
     <div className="fixed inset-0 bg-white z-50 overflow-auto p-4">
       <button
@@ -16,7 +18,7 @@ const DrawerScreen = ({ open, onClose, content }) => {
       >
         ✕
       </button>
-      <div>{content}</div>
+      <div>{content.title}</div>
     </div>,
     document.body
   );

@@ -1,7 +1,7 @@
 import  { useState } from 'react'
 import ContentTab from '../components/content-tab/ContentTab.jsx';
 import CalificationTab from '../components/grades-tab/CalificationTab.jsx';
-import ForumTab from '../components/ForumTab';
+import ForumTab from '../components/forum-tab/ForumTab';
 
 const CourseDetailPage = () => {
   const [activeTab, setActiveTab] = useState('content');

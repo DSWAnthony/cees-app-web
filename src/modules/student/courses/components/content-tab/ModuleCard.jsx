@@ -4,8 +4,10 @@ import { MdOutlineQuiz, MdTask } from "react-icons/md";
 import { BiFolder } from "react-icons/bi";
 import { useModuleExpansion } from "../../hooks/useModuleExpansion.js";
 import { useDrawerStore } from "../../store/useDrawerStore.js";
+import { useNavigate } from "react-router-dom";
 
 export function ModuleCard({ module }) {
+  const navigate = useNavigate();
   const { expandedModules, toggleModule } = useModuleExpansion();
   const [expandedFolders, setExpandedFolders] = useState(new Set());
   const openDrawer = useDrawerStore((state) => state.openDrawer);
@@ -31,11 +33,10 @@ export function ModuleCard({ module }) {
           openDrawer("task", item);
           break;
         case "presentation":
+          navigate('/courses/detail/file');
+          break;
         case "tutorial":
-          openDrawer(
-            "presentation",
-            item.content || <p>No content available</p>
-          );
+          navigate('/courses/detail/file');
           break;
         default:
           break;

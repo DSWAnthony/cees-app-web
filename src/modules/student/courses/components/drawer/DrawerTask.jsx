@@ -1,7 +1,11 @@
 import React from 'react';
 import { Drawer } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
-const DrawerTask = ({ open, onClose, item }) => (
+const DrawerTask = ({ open, onClose, item }) => {
+  const navigate = useNavigate();
+
+  return (
   <Drawer
     open={open}
     width={350}
@@ -11,7 +15,7 @@ const DrawerTask = ({ open, onClose, item }) => (
       <div className="flex justify-end">
         <button
           className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
-          onClick={() => {/* handle submit task */}}
+          onClick={() => navigate('/courses/detail/task')} 
         >
           Submit
         </button>
@@ -21,6 +25,7 @@ const DrawerTask = ({ open, onClose, item }) => (
     {/* render task details using item */}
     <h1>{item.title}</h1>
   </Drawer>
-);
+  );
+};
 
 export default DrawerTask;
